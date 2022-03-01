@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: poiapi
+  name: poiapi
+spec:
+  containers:
+  - image: registryhcv3795.azurecr.io/openhack/poiapi:latest
+    name: poiapi
+    envFrom:
+    - secretRef:
+        name: sqldbsecret
+    ports:
+    - containerPort: 80
+
