@@ -8,6 +8,9 @@ spec:
   containers:
   - image: registryhcv3795.azurecr.io/openhack/userprofile:latest
     name: userprofile
+    env:
+    - name: ASPNETCORE_ENVIRONMENT
+      value: "Development"
     envFrom:
     - secretRef:
         name: sqldbsecret 

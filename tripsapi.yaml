@@ -8,6 +8,15 @@ spec:
   containers:
   - image: registryhcv3795.azurecr.io/openhack/tripsapi:latest
     name: tripsapi
+    env:
+    - name: PORT
+      value: '80'
+    - name: OPENAPI_DOCS_URI
+      value: 'http://localhost'
+    - name: DEBUG_LOGGING
+      value: 'true'
+    - name: ASPNETCORE_ENVIRONMENT
+      value: "Production"
     envFrom:
     - secretRef:
         name: sqldbsecret

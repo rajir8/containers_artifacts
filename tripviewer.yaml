@@ -8,3 +8,8 @@ spec:
   containers:
   - image: registryhcv3795.azurecr.io/openhack/tripviewer:latest
     name: tripviewer
+    env:
+      - name: USERPROFILE_API_ENDPOINT
+        value: "http://svc-userprofile"
+      - name: TRIPS_API_ENDPOINT
+        value: "http://svc-tripsapi"
